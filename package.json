@@ -1,8 +1,10 @@
 {
-  "name": "boom",
+  "name": "boom-cli",
   "version": "1.0.0",
   "description": "Command-line utility application.",
-  "bin": "./bin/cli.js",
+  "bin": {
+    "boom": "./bin/cli.js"
+  },
   "main": "./bin/cli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
