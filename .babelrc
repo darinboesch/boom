@@ -1,0 +1,19 @@
+{
+  "sourceMaps": "inline",
+  "retainLines": false,
+  "minified": true,
+  "comments": false,
+  "compact": true,
+  "presets": [
+    "env",
+    "stage-0"
+  ],
+  "plugins": [
+    ["transform-builtin-extend", {
+      "globals": ["Array", "Set"]
+    }]
+  ],
+  "ignore": [
+    "node_modules/"
+  ]
+}
