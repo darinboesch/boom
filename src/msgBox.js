@@ -11,7 +11,7 @@ const boxenOptions = {
 
 export default ({
   message = "Welcome to Boom!",
+  color = 'yellow',
   options = boxenOptions
 } = {}) => 
-  boxen(chalk.yellow.bold(message), options)
-
+  boxen(chalk[color].bold(message), options)

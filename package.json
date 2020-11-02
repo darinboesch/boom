@@ -9,7 +9,7 @@
     "compile": "babel ./src -d ./dist --no-comments --copy-files",
     "prepublish": "npm run compile",
     "start": "node ./bin/boom",
-    "dev": "npm run compile && npm run start",
+    "dev": "npm run compile && npm run start --",
     "test": "mocha 'test/**/*.test.js' --require babel-polyfill --require babel-register"
   },
   "author": "Darin Boesch",
