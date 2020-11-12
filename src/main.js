@@ -1,7 +1,7 @@
 import Yargs from 'yargs/yargs'
 import { hideBin } from 'yargs/helpers'
 import msgBox from './msgBox'
-import { renameFiles } from './directoryUtility'
+import { renameFiles } from './filesystem'
 
 export default () => {
   console.log(msgBox())
@@ -11,7 +11,7 @@ export default () => {
     .scriptName('boom')
     .showHelpOnFail(true)
     .command('renameFiles', 'for renaming all files in a directory', (yargs) => {
-      // boom renameFiles -d "./test/data" -i "./test/format-file-name.json" -t
+      // boom renameFiles -d "./test/data" -i "./src/instructions/format-string.json" -t
       return yargs
         .option('directory', {
           alias: 'd',
