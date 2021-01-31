@@ -1,7 +1,8 @@
 import Yargs from 'yargs/yargs'
 import { hideBin } from 'yargs/helpers'
 import msgBox from './msgBox'
-import { renameFiles } from './filesystem'
+import { renameFiles } from './fileSystem'
+import { excel } from './excel'
 
 export default () => {
   console.log(msgBox())
@@ -39,6 +40,14 @@ export default () => {
         demand: true
       })
     })
+    .command('excel', 'for excel file generation', (yargs) => {
+      return yargs.option('targetFile', {
+        alias: 'o',
+        type: 'string',
+        describe: 'The target file',
+        demand: true
+      })
+    })
     .demandCommand(1)
   
   const args = yargsInstance.argv
@@ -50,10 +59,16 @@ export default () => {
           args.instructionFile && { instructionFile: args.instructionFile },
           args.dryrun && { dryrun: args.dryrun }
         ))
-        break;
+        break
 
       case 'parser':
         console.log('parse file')
+        break
+
+      case 'excel':
+        excel(Object.assign({},
+          args.targetFile && { targetFile: args.targetFile }
+        ))
         break
     }
   })

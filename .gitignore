@@ -64,3 +64,6 @@ typings/
 
 dist/
 node_modules/
+
+*config.dev.js
+*.xlsx
